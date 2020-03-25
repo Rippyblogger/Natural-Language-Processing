@@ -6,6 +6,11 @@ import './styles/form.scss';
 import './styles/header.scss';
 import './styles/resets.scss';
 
+export {
+    checkForName,
+    handleSubmit
+};
+
 console.log(checkForName);
 
 alert("I EXIST")
