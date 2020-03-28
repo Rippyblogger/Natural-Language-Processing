@@ -1,3 +1,5 @@
+//const baseURL = "https://api.aylien.com/api/v1";
+
 import { checkForName } from './js/nameChecker';
 import { handleSubmit } from './js/formHandler';
 import './styles/base.scss';
@@ -15,3 +17,4 @@ console.log(checkForName);
 
 alert("I EXIST")
 console.log("CHANGE!!");
+

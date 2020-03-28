@@ -8,13 +8,15 @@ var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
 var aylien = require("aylien_textapi");
+/* Middleware*/
 const bodyParser = require('body-parser');
 const cors = require('cors');
-
 const app = express()
 
-app.use(express.static('dist'))
 
+//use midldleware and express
+app.use(express.static('dist'))
+app.use(bodyParser.json());
 console.log(__dirname)
 
 app.get('/', function (req, res) {
@@ -30,14 +32,3 @@ app.get('/test', function (req, res) {
     res.send(mockAPIResponse)
 })
 
-try{
-    console.log("sending request");
-    textapi.sentiment({
-        'text': 'John is a very good football player!'
-      }, function(error, response) {
-        if (error === null) {
-          console.log(response);
-        }
-      });
-
-}
