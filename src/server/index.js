@@ -1,9 +1,5 @@
 const dotenv = require('dotenv');
 dotenv.config();
-/*var textapi = new aylien({
-    application_id: process.env.API_ID,
-    application_key: process.env.API_KEY
-    });*/
 var path = require('path')
 const express = require('express')
 const mockAPIResponse = require('./mockAPI.js')
@@ -14,21 +10,46 @@ const cors = require('cors');
 const app = express()
 
 
-//use midldleware and express
+//use midldleware, cors and express
 app.use(express.static('dist'))
 app.use(bodyParser.json());
+app.use(cors());
 console.log(__dirname)
 
+//app.get('/', function (req, res) {
+//    res.sendFile('dist/index.html')
+//})
+const textapi = new aylien({
+    application_id: process.env.AppId,
+    application_key: process.env.APIkey
+    
+  });
+
 app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
+    res.sendFile(path.resolve('dist/index.html'));
 })
 
 // designates what port the app will listen to for incoming requests
-app.listen(3000, function () {
-    console.log('Example app listening on port 3000!')
+app.listen(8081, function () {
+    console.log('Example app listening on port 8081!')
 })
 
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
-})
+app.post('/api', async (req, res) => {
+    const { text } = req.body;
+    console.log(text);
+    
+    try {
+        console.log("Sending request");
+       textapi.sentiment({text }, 
+        function(error, response) {
+        if (error === null) {
+          console.log(response);
+          res.send(response);
+        }
+      });
+      
+    } catch(error) {
+      console.log(error);
+    }
+  })
 
