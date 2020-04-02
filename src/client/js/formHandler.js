@@ -21,7 +21,7 @@ function handleSubmit(event) {
         document.getElementById('Subjectivity').innerHTML = `subjectivity: ${res.subjectivity} <br>`
         document.getElementById('SubjectivityConfidence').innerHTML = `subjectivity_confidence: ${res.subjectivity_confidence}<br>`
 
-        console.log(res);
+        
 
     }).catch(err => console.log(err));
 }
