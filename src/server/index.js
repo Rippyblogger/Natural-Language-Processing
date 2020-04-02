@@ -40,11 +40,11 @@ app.post('/api', async (req, res) => {
     
     try {
         console.log("Sending request");
-       textapi.sentiment({text }, 
-        function(error, response) {
-        if (error === null) {
-          console.log(response);
-          res.send(response);
+        textapi.sentiment({text }, 
+          function(error, response) {
+          if (error === null) {
+            console.log(response);
+            res.send(response);
         }
       });
       
