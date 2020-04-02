@@ -16,12 +16,12 @@ function handleSubmit(event) {
         headers: {"Content-Type": "application/json"}
     })
     .then(res => res.json())
-    .then(function(data) {
-        document.getElementById('Text').innerHTML = `text: ${data.text} <br>`
-        document.getElementById('Polarity').innerHTML = `polarity: ${data.polarity} <br>`
-        document.getElementById('PolarityConfidence').innerHTML = `polarity_confidence: ${data.polarity_confidence} <br>`
-        document.getElementById('Subjectivity').innerHTML = `subjectivity: ${data.subjectivity} <br>`
-        document.getElementById('SubjectivityConfidence').innerHTML = `subjectivity_confidence: ${data.subjectivity_confidence}<br>`
+    .then(function(reply) {
+        document.getElementById('Text').innerHTML = `text: ${reply.text} <br>`
+        document.getElementById('Polarity').innerHTML = `polarity: ${reply.polarity} <br>`
+        document.getElementById('PolarityConfidence').innerHTML = `polarity_confidence: ${reply.polarity_confidence} <br>`
+        document.getElementById('Subjectivity').innerHTML = `subjectivity: ${reply.subjectivity} <br>`
+        document.getElementById('SubjectivityConfidence').innerHTML = `subjectivity_confidence: ${reply.subjectivity_confidence}<br>`
 
         
 
