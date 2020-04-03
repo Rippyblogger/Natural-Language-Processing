@@ -2,10 +2,13 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background-color: #FFFDD0;
 }
 
 main {
+    border: dashed 2px lightblue;
     flex: 2;
+    
 }
 
 section {
