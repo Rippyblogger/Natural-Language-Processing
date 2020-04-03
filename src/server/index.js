@@ -35,12 +35,12 @@ app.listen(8081, function () {
 })
 
 app.post('/api', async (req, res) => {
-    const { text } = req.body;
-    console.log(text);
+    const { formText } = req.body;
+    console.log(formText);
     
     try {
         console.log("Sending request");
-        textapi.sentiment({text }, 
+        textapi.sentiment({'text': formText }, 
           function(error, response) {
           if (error === null) {
             console.log(response);
