@@ -1,3 +1,14 @@
+# My notes
+
+In this project, i sucesfully integrated the Aylien API and created a Natural Language processing app which can be accessed at localhost:8081 upon following the instrutions listed below for settinng up the environment.
+
+I made use of starter code provided by the Udacity team, registed for a key and APPID on Aylien,, used Webpack, Babel, Service worker as well as other plugins.
+
+Finally, i added Jest to test the validity of my Clientside Javascript functions.
+
+
+
+
 # Project Instructions
 
 This repo is your starter code for the project. It is the same as the starter code we began with in lesson 2. Install and configure Webpack just as we did in the course. Feel free to refer to the course repo as you build this one, and remember to make frequent commits and to create and merge branches as necessary!
