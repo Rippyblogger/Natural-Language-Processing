@@ -4,8 +4,8 @@ function handleSubmit(event) {
     // check what text was put into the form field
     let formText = document.getElementById('name').value
     if (formText === " " || formText.length === 0){
-        alert("Enter a correct string)");
-        console.log("Enter a correct string)");
+        alert("Kiindly enter a valid string");
+        console.log("User inputted an invalid string)");
     }else{
     
     Client.formText
