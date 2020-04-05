@@ -1,13 +1,13 @@
+import { checkString } from './checkString'
+
 function handleSubmit(event) {
     event.preventDefault()
 
     // check what text was put into the form field
-    let formText = document.getElementById('name').value
-    if (formText === " " || formText.length === 0){
-        alert("Kiindly enter a valid string");
-        console.log("User inputted an invalid string)");
-    }else{
+    let formText = document.getElementById('name').value;
     
+    if (checkString(formText)){
+
     Client.formText
 
     console.log(formText)
@@ -31,7 +31,7 @@ function handleSubmit(event) {
         
 
     }).catch(err => console.log(err));
-    };
-}
+    }
+};
 
 export { handleSubmit }

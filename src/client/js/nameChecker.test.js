@@ -1,10 +1,21 @@
-const { handleSubmit } = require('../js/formHandler');
+const mockAPI = require('../../server/mockAPI');
 
-describe('test if the handleSubmit exists', () => {
+describe("Mock API",()=>{
 
-    test('Return true', () => {
+    test('results', () => {
+    let mockAPI= {
+        polarity: 'neutral',
+        subjectivity: 'objective',
+        text: 'mov',
+        polarity_confidence: 0.407149076461792,
+        subjectivity_confidence: 0.7670384232486057
+    };
 
-        expect(handleSubmit).toBeDefined();
-    });
-    
+    expect(typeof mockAPI.polarity).toBe('string');
+    expect(typeof mockAPI.subjectivity).toBe('string');
+    expect(typeof mockAPI.text).toBe('string');
+    expect(typeof mockAPI.polarity_confidence).toBe('number');
+    expect(typeof mockAPI.subjectivity_confidence).toBe('number');
+});
+
 });

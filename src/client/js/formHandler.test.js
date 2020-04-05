@@ -1,10 +1,11 @@
 const { handleSubmit } = require('../js/formHandler');
 
-describe('test if the handleSubmit exists', () => {
+describe('test if the valid string was entered in the text field', () => {
 
-    test('Return true', () => {
-
-        expect(handleSubmit).toBeDefined();
-    });
+    test('name', () => {
+    let formText = "Stronger men";
+        // string
+        expect(handleSubmit (typeof formText)).toBe('string');
+      });
     
 });
